@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pushster&family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Pushster&family=Spline+Sans:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: block;
+    margin: 0 auto;
+    /* width: fit-content; */
+    margin-top: 2em;
+    padding: 1.5em;
+    background: white;
+    box-shadow: 1px 0px 20px 0px #75b3c0;
+    border-radius: 10px;
+    /* justify-content: center; */
+}
+body::before{
+    content: '';
+    opacity: .5;
+    width: 100%;
+    height: 15em;
+    position: fixed;
+    top: 0;
+    z-index: -3;
+    background: #189AB4;
+}
+.color{
+    background: #76C4D1;
+    width: 100vw;
+    position: fixed;
+    height: 6em;
+}
+body{
+    background-color: #D4F1F4;
+}
+.navigation{
+    background: #76C4D1;
+    display: flex;
+    align-items: center;
+    padding: 1.5em;
+}
+
+.navigation li{
+    list-style: none;
+    padding: 0 2em;
+    font-family: 'Spline Sans', sans-serif;
+    position: relative;
+}
+
+.navigation .navbutton::before{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 100%;
+    width: 0;
+    height: .3em;
+    text-align: center;
+    background-color: #ffffff;
+    transition: 0.2s all linear;
+}
+
+.navigation .sitename{
+    font-family: 'Pushster', cursive;
+    font-size: 2em;
+    padding: 0 .5em;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100vw;
+}
+
+.login{
+    width: 100%;
+}
+.navbutton:hover::before {
+    width: 100%;
+    left: 0;
+}
+.navbutton:hover~.navbutton::before{
+    left: 0;
+}
+.profile{
+    margin: 0 auto;
+}
+
+.information{
+    font-size: 10px;
+    font-family: 'Spline Sans', sans-serif;
+    margin-top: .5em;
+}
+.pic::-webkit-file-upload-button {
+    border: none;
+    border-radius: 50px;
+    padding: .5em;
+    background: #05445E;
+    color: white;
+    margin: 0 .5em;
+}
+
+.removepic{
+    position: absolute;
+    font-size: 16px;
+    background-color: #8080808a;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.removepiclink{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.profilecont:hover .removepic{
+    display: flex;
+}
+
+.profilecont{
+    position: relative;
+}
+.navigation li a{
+    color: white;
+    text-decoration: none;
+}
+
+
+.fixed{
+    min-width: fit-content;
+}
+
+.verified{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5em;
+}
+
+.companyname{
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+    font-size: 2em;
+    text-align: center;
+    padding-bottom: 1em;
+    color: #05445E;
+}
+.pmargin{
+    text-align: center;
+    margin-bottom: 1em;
+}
+.margin{
+    margin: 0 4em 1em 0;
+}
+
+.verifymsg{
+    text-align: center;
+    display: block;
+}
+.marginss{
+    margin: 0 9em;
+}
+.marginsss{
+    margin-right: 2em;
+}
+.otherfunctions{
+    grid-column: 1/3;
+}
+.positions{
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+.passchange{
+    margin-top: 6em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.fit{
+    max-width: fit-content;
+}
+.positionpass{
+    position: absolute;
+    top: 27em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mid{
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+}
+#message{
+    margin-top: 12em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.lastline{
+    display: flex;
+    margin-top: 0;
+    justify-content: space-between;
+}
+.lastlines{
+    width: 33em;
+}
+.main{
+    display: grid;
+    width: 51em;
+    margin: 0 auto;
+    position: relative;
+    top: 7em;
+    align-items: center;
+    grid-template-columns: 18em 33em;
+    grid-gap: 2em;
+}
+.forms{
+    display: flex;
+    justify-content: space-between;
+    width: 26em;
+}
+.formdata{
+    width: 33em;
+}
+.labels{
+    font-family: 'Spline Sans', sans-serif;
+    color: #05445E;
+}
+
+.urname{
+    /* border: none; */
+    padding: .5em;
+    min-width: 20em;
+}
+
+.yourname{
+    display: flex;
+    flex-direction: column;
+    margin: .2em;
+}
+
+.center{
+    text-align: center;
+    font-family: 'Pushster', cursive;
+    margin-top: .5em;
+    font-size: 2em;
+}
+
+.prifileimg{
+    border-radius: 100px;
+    margin: 0 auto;
+    width: fit-content;
+}
+.pic{
+    border-radius: 100px;
+}
+
+.left{
+    font-family: 'Spline Sans', sans-serif;
+    margin-top: 1em;
+    color: gray;
+}
+
+#mbottom{
+    margin-bottom: 0;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.rowlast{
+    display: flex;
+    justify-content: space-around;
+    width: fit-content;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.rowlast .space{
+    margin: 0 1em;
+}
+.submit{
+    background-color: #05445E;
+    color: white;
+    border: none;
+    font-family: 'Spline Sans', sans-serif;
+    padding: 1em 2em;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: .9em;
+}
+
+.submit:hover{
+    cursor: pointer;
+    background-color: #189AB4;
+}
+.outline{
+    border: none;
+    border-bottom: 2px solid #05445E;
+}
+.outline:focus{
+    outline: none;
+}
+.rowlasts{
+    display: flex;
+    justify-content: space-between;
+    /* max-width: 35em; */
+    /* width: fit-content; */
+    /* margin: 0 8em; */
+}
+
+.deleacc{
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.9em;
+}

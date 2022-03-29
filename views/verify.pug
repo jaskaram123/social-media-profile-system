@@ -1,0 +1,24 @@
+html
+    head
+    -var tt= session
+        title= tt
+        style
+            include ../static/style.css
+        <meta name="google-signin-client_id" content="1094604971939-cqtqptimcn5bporde0dvkiefqcv91phb.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    body 
+        nav(class='navbar')
+            ul(class='navigation')
+                li(class='sitename')
+                    a(href='/' class='sitename-webchat' id='webchat' name='webchat') WEBCHAT
+                li(class='navbutton')
+                    <a href="/logout" onclick="signOut();">Sign out</a>
+            ul(class='navigation')
+                li(class='profile')
+                    a(href='/webchat/profile' class='profile' id='profile')= username
+        div(class='main')
+        div(class='container alert' id='message')
+            div(class='')
+                p(class='mid')= message
+        div(class='container alert' id='alert')= alert
+    script(src="/static/res.js") 

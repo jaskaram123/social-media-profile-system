@@ -1,0 +1,66 @@
+html
+    head
+        title #{username} • Webchat
+        style
+            include ../static/style.css
+        <meta name="google-signin-client_id" content="1094604971939-cqtqptimcn5bporde0dvkiefqcv91phb.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    body
+        nav(class='navbar')
+            ul(class='navigation')
+                li(class='sitename')
+                    a(href='/' class='sitename-webchat' id='webchat' name='webchat') WEBCHAT
+                li(class='navbutton')
+                    <a href="/logout" onclick="signOut();">Sign out</a>
+            ul(class='navigation')
+                li(class='profile')
+                    a(href='/webchat/profile' class='profile' id='profile')= username
+        div(class='main')
+            div(class='profiledata')
+                div(class='container fixed' id='container')
+                    div(class='prifileimg')
+                        if imgs
+                            div(class='profilecont')
+                                div(class='removepic')
+                                    a(href="/webchat/removepic" class='removepiclink') REMOVE PICTURE
+                                img(src= imgs class='pic' width='200px' height='200px')
+                        else
+                            img(src='/static/user.svg' class='pic' width='200px' height='200px')
+                    p(class='center')= username
+                    p(class='left')= email
+            div(class='formdata')
+                div(class='container')
+                    div(class='row ')
+                        div(class='profile')
+                            p(class='labels categ pmargin') CHANGE PROFILE PICTURE:
+                            form(class='forms' method='POST' action='/webchat/profileupload' enctype="multipart/form-data")
+                                label(for="porfilepic" class='labels categ' )
+                                input(type="file", name="profilepic" class='pic' id='pic' onchange='fileuploaded();')
+                                button(type="submit" class='submit' id='buttonpic') Submit
+                            p(class='information' id='information') THE BUTTON REMAIN DISABLED UNTILL YOU UPLOAD FILE.
+                div(class='container')
+                    div(class='row')
+                        div(class='profile')
+                            p(class='labels categ pmargin') CHANGE USERNAME:
+                            form(class='forms' method='POST' action='/webchat/profileupdate')
+                                label(for="cusername" class='labels categ' ) 
+                                input(type="text", name="cusername" id='name' class='outline urname' placeholder= 'ENTER YOUR NAME:')
+                                button(type="submit" class='submit' id='buttonuname') Submit
+            div(class='otherfunctions')
+                div(class='container lastline')
+                    div(class=' rowlasts' id='mbottom')
+                                a(href="/webchat/deleteacc" class='submit deleacc') DELETE ACCOUNT
+                    if verified
+                        div(class='verified') Account verified
+                            img(src="/static/tick.png", width = '30px' height='30px')
+                    else
+                        div(class=' rowlasts')
+                            form(action="/webchat/verify", method="get")
+                                button(type="submit" class='submit' id='emailverify') GET VERIFIED
+                    if !google
+                        div(class=' rowlasts' id='mbottom')
+                            a(href="/webchat/passwordchange" class='submit deleacc' target='_blank') CHANGE PASSWORD
+        div(class='container alert positions fit' id='alert')= alert
+        if removed
+            div(class='container alert positions fit' id='alert2') PROFILE PIC REMOVED
+    script(src="/static/res.js")

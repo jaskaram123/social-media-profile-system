@@ -1,0 +1,40 @@
+html
+    head
+        title Webchat
+        style
+            include ../static/style.css
+        <meta name="google-signin-client_id" content="1094604971939-cqtqptimcn5bporde0dvkiefqcv91phb.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    body 
+        nav
+            ul(class='navigation')
+                li(class='sitename')
+                    a(href='/' class='sitename-webchat' id='webchat' name='webchat') WEBCHAT
+                li(class='navbutton')
+                    a(href='/login' class='navbutton-signup' id='login' name='login') LOGIN
+                li(class='navbutton')
+                    a(href='/' class='navbutton-sognup' id='signup' name='signup') SIGNUP
+        div(class='container fit' id='container')
+            p(class='companyname' id='companyname') LOGIN TO WEBCHAT
+            form(class='form' method='POST' action='/login' id='form' name='form')
+                div(class='row')
+                    div(class='yourname login')
+                        label(for="name" class='labels') 
+                        input(type="text", name="name" id='name' class='outline urname login' placeholder= 'ENTER YOUR NAME:')
+                div(class='row')
+                    div(class='yourname email login')
+                        label(for="email" class='labels email') 
+                        input(type="email", name="email" id='email' class='outline urname email login' placeholder= 'ENTER YOUR EMAIL:')
+                div(class='row')
+                    div(class='yourname categ login')
+                        label(for="categ" class='labels categ') 
+                        input(type="password", name="categ" id='categ' class='outline urname categ login' placeholder= 'ENTER PASSWORD:')
+                div(class='rowlast')
+                    div(class='space')
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    div(class='space')
+                        button(type='submit' class='submit' id='button') SUBMIT
+        
+        div(class='container alert fit' id='alert')= alert
+    script(src="static/res.js") 
+
